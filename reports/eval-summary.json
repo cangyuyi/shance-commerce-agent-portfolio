@@ -1,0 +1,23 @@
+{
+  "verified_at": "2026-07-27T17:24:11.626Z",
+  "data_boundary": "仅用于展示评测方法，接入模型 API 后必须复跑，不代表真实商业收益。",
+  "product_count": 6,
+  "case_count": 20,
+  "version_count": 3,
+  "metric_count": 7,
+  "weighted_scores": {
+    "v0": 69,
+    "v1": 82,
+    "v2": 92
+  },
+  "risk_distribution": {
+    "none": 3,
+    "safety": 3,
+    "missing_data": 3,
+    "prohibited_claim": 5,
+    "conflict": 2,
+    "tone_conflict": 1,
+    "format": 2,
+    "context_drift": 1
+  }
+}

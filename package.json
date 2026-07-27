@@ -1,0 +1,16 @@
+{
+  "name": "shance-commerce-agent-portfolio",
+  "version": "1.0.0",
+  "description": "Evaluation-driven e-commerce content Agent portfolio for AI product manager interviews.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "demo": "node scripts/demo-agent.mjs",
+    "benchmark": "node scripts/run-benchmark.mjs",
+    "validate": "node scripts/validate-data.mjs",
+    "test": "node --test tests/project.test.mjs"
+  }
+}

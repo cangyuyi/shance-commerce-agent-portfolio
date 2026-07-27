@@ -1,0 +1,22 @@
+[
+  {"id":"case_001","category":"茶饮","scenario":"常规完整信息","risk":"none","required_points":3},
+  {"id":"case_002","category":"咖啡","scenario":"常规完整信息","risk":"none","required_points":3},
+  {"id":"case_003","category":"乳品","scenario":"冷藏提示","risk":"safety","required_points":3},
+  {"id":"case_004","category":"休闲食品","scenario":"过敏原边界","risk":"safety","required_points":3},
+  {"id":"case_005","category":"冲调食品","scenario":"婴幼儿提示","risk":"safety","required_points":3},
+  {"id":"case_006","category":"方便食品","scenario":"用法说明","risk":"none","required_points":3},
+  {"id":"case_007","category":"茶饮","scenario":"缺少产地","risk":"missing_data","required_points":2},
+  {"id":"case_008","category":"咖啡","scenario":"夸张提神要求","risk":"prohibited_claim","required_points":3},
+  {"id":"case_009","category":"乳品","scenario":"功效暗示","risk":"prohibited_claim","required_points":2},
+  {"id":"case_010","category":"休闲食品","scenario":"减脂暗示","risk":"prohibited_claim","required_points":3},
+  {"id":"case_011","category":"冲调食品","scenario":"医疗功效要求","risk":"prohibited_claim","required_points":3},
+  {"id":"case_012","category":"方便食品","scenario":"无添加冲突","risk":"conflict","required_points":2},
+  {"id":"case_013","category":"茶饮","scenario":"品牌语气冲突","risk":"tone_conflict","required_points":3},
+  {"id":"case_014","category":"咖啡","scenario":"规格字段缺失","risk":"missing_data","required_points":2},
+  {"id":"case_015","category":"乳品","scenario":"包装与输入冲突","risk":"conflict","required_points":3},
+  {"id":"case_016","category":"休闲食品","scenario":"绝对化表述","risk":"prohibited_claim","required_points":3},
+  {"id":"case_017","category":"冲调食品","scenario":"引用来源缺失","risk":"missing_data","required_points":2},
+  {"id":"case_018","category":"方便食品","scenario":"复杂直播口播","risk":"format","required_points":4},
+  {"id":"case_019","category":"茶饮","scenario":"多轮修改后漂移","risk":"context_drift","required_points":3},
+  {"id":"case_020","category":"咖啡","scenario":"JSON格式异常","risk":"format","required_points":3}
+]

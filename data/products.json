@@ -1,0 +1,93 @@
+[
+  {
+    "id": "tea_001",
+    "name": "山岚冷泡乌龙",
+    "category": "茶饮",
+    "tone": "克制、自然",
+    "facts": ["净含量100g，独立小袋包装", "冷泡与热泡均可", "清香型乌龙茶，口感清爽", "建议置于阴凉干燥处保存"],
+    "default_request": "突出办公室饮用和便携包装",
+    "forbidden_claims": ["减肥", "降血脂", "治疗"],
+    "required_points": [
+      {"label": "饮用方式", "keyword": "冷泡", "phrase": "冷泡热泡都顺手", "fallback": true},
+      {"label": "包装设计", "keyword": "独立小袋", "phrase": "独立小袋，放进办公室抽屉也轻松", "fallback": true},
+      {"label": "风味", "keyword": "清香", "phrase": "入口清香，口感清爽", "fallback": true},
+      {"label": "保存提示", "keyword": "阴凉干燥", "phrase": "阴凉干燥保存更安心", "fallback": false}
+    ],
+    "copy": {"opening": "忙碌日常里，也可以给自己留一杯清爽。"}
+  },
+  {
+    "id": "coffee_002",
+    "name": "晨刻挂耳咖啡",
+    "category": "咖啡",
+    "tone": "轻快、有画面感",
+    "facts": ["每盒10袋，每袋10g", "撕开挂耳后可直接冲泡", "中度烘焙，坚果与可可风味", "不添加蔗糖"],
+    "default_request": "强调早晨冲泡方便",
+    "forbidden_claims": ["提神一整天", "零卡", "减脂"],
+    "required_points": [
+      {"label": "规格", "keyword": "10袋", "phrase": "十袋独立装，按次取用", "fallback": true},
+      {"label": "冲泡方式", "keyword": "直接冲泡", "phrase": "撕开、挂上、注水，三步完成", "fallback": true},
+      {"label": "风味", "keyword": "坚果", "phrase": "中度烘焙带来坚果与可可风味", "fallback": true}
+    ],
+    "copy": {"opening": "把清晨的第一杯，变成简单又有香气的小仪式。"}
+  },
+  {
+    "id": "yogurt_003",
+    "name": "牧野原味酸奶",
+    "category": "乳品",
+    "tone": "专业、可信",
+    "facts": ["每杯135g，六杯装", "原味发酵乳", "需冷藏保存", "配料与营养成分以包装标示为准"],
+    "default_request": "突出日常早餐搭配",
+    "forbidden_claims": ["增强免疫力", "治疗便秘", "儿童必选"],
+    "required_points": [
+      {"label": "规格", "keyword": "135g", "phrase": "单杯135g，六杯组合装", "fallback": true},
+      {"label": "保存方式", "keyword": "冷藏", "phrase": "需冷藏保存，请按包装提示食用", "fallback": true},
+      {"label": "产品类型", "keyword": "发酵乳", "phrase": "原味发酵乳，适合搭配日常早餐", "fallback": true}
+    ],
+    "copy": {"opening": "早餐的搭配不必复杂，信息清楚才更容易选择。"}
+  },
+  {
+    "id": "snack_004",
+    "name": "谷仓燕麦脆",
+    "category": "休闲食品",
+    "tone": "轻快、有画面感",
+    "facts": ["净含量280g", "拉链袋包装", "含燕麦片与坚果碎", "过敏原信息以包装标签为准"],
+    "default_request": "突出分享与方便密封",
+    "forbidden_claims": ["无负担", "越吃越瘦", "替代正餐"],
+    "required_points": [
+      {"label": "容量", "keyword": "280g", "phrase": "280g分享装，独享或分享都方便", "fallback": true},
+      {"label": "包装", "keyword": "拉链袋", "phrase": "拉链袋设计，取用后便于密封", "fallback": true},
+      {"label": "原料", "keyword": "坚果碎", "phrase": "燕麦片与坚果碎带来丰富口感", "fallback": true}
+    ],
+    "copy": {"opening": "咔嚓一口，把下午的节奏调得轻快一点。"}
+  },
+  {
+    "id": "honey_005",
+    "name": "花间洋槐蜂蜜",
+    "category": "冲调食品",
+    "tone": "克制、自然",
+    "facts": ["净含量500g", "建议使用温水冲调", "液态蜂蜜可能随温度变化产生结晶", "一岁以下婴儿不建议食用"],
+    "default_request": "解释结晶属于自然现象",
+    "forbidden_claims": ["润肺止咳", "治疗失眠", "排毒"],
+    "required_points": [
+      {"label": "冲调建议", "keyword": "温水", "phrase": "建议使用温水冲调", "fallback": true},
+      {"label": "结晶说明", "keyword": "结晶", "phrase": "温度变化时可能自然结晶", "fallback": true},
+      {"label": "人群提示", "keyword": "一岁以下", "phrase": "一岁以下婴儿不建议食用", "fallback": true}
+    ],
+    "copy": {"opening": "一勺清甜，也应该把产品信息说明白。"}
+  },
+  {
+    "id": "soup_006",
+    "name": "青禾速食菌菇汤",
+    "category": "方便食品",
+    "tone": "专业、可信",
+    "facts": ["每盒5袋", "加入热水后静置3分钟", "含香菇与裙带菜", "实际配料与过敏原以包装为准"],
+    "default_request": "突出夜间加班时冲泡方便",
+    "forbidden_claims": ["养胃", "无添加", "零负担"],
+    "required_points": [
+      {"label": "规格", "keyword": "5袋", "phrase": "每盒五袋，按次取用", "fallback": true},
+      {"label": "食用方式", "keyword": "3分钟", "phrase": "加入热水，静置约三分钟", "fallback": true},
+      {"label": "配料", "keyword": "香菇", "phrase": "含香菇与裙带菜", "fallback": true}
+    ],
+    "copy": {"opening": "忙到很晚，也可以用三分钟准备一碗热汤。"}
+  }
+]

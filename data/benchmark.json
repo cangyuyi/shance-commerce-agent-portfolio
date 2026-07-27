@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "case_count": 20,
+    "dataset_type": "自建脱敏/虚构案例",
+    "result_type": "预置离线演示数据",
+    "verified_at": "2026-07-28",
+    "disclaimer": "仅用于展示评测方法，接入模型 API 后必须复跑，不代表真实商业收益。"
+  },
+  "metrics": [
+    {"key":"factuality","label":"事实准确性","weight":25},
+    {"key":"coverage","label":"卖点覆盖","weight":20},
+    {"key":"compliance","label":"合规与安全","weight":20},
+    {"key":"brand","label":"品牌一致性","weight":15},
+    {"key":"usability","label":"内容可用性","weight":10},
+    {"key":"format","label":"格式稳定性","weight":5},
+    {"key":"workflow","label":"工作流成功率","weight":5}
+  ],
+  "versions": [
+    {
+      "id":"v0",
+      "label":"V0 / BASELINE",
+      "name":"单次 Prompt",
+      "description":"无结构约束，直接生成",
+      "overall":69,
+      "scores":{"factuality":70,"coverage":65,"compliance":61,"brand":68,"usability":73,"format":66,"workflow":100}
+    },
+    {
+      "id":"v1",
+      "label":"V1 / STRUCTURED",
+      "name":"结构化 Prompt",
+      "description":"固定输入、输出与拒答规则",
+      "overall":82,
+      "scores":{"factuality":83,"coverage":79,"compliance":80,"brand":78,"usability":82,"format":96,"workflow":100}
+    },
+    {
+      "id":"v2",
+      "label":"V2 / WORKFLOW",
+      "name":"检索＋双重质检",
+      "description":"证据映射、风险检查与人工确认",
+      "overall":92,
+      "scores":{"factuality":95,"coverage":90,"compliance":94,"brand":87,"usability":86,"format":100,"workflow":94}
+    }
+  ],
+  "bad_cases": [
+    {
+      "id":"hallucination",
+      "label":"事实幻觉",
+      "before":"源自海拔1200米核心产区，连续三年获得行业金奖，是办公室人群公认的减脂好茶。",
+      "tag":"输入中不存在产地、奖项与功效",
+      "cause":"生成阶段缺少事实边界",
+      "explanation":"模型把品类常识和常见营销话术当作商品事实，没有区分“可能正确”和“输入已证明”。",
+      "fix":"要求所有事实陈述映射到 source_id；无证据字段不生成，并在质检阶段逐句检查证据覆盖。"
+    },
+    {
+      "id":"compliance",
+      "label":"合规风险",
+      "before":"每天一杯，轻松降血脂、改善睡眠，让身体没有负担。",
+      "tag":"食品功效与医疗暗示",
+      "cause":"只依赖模型自我检查",
+      "explanation":"相同模型既生成又评审时容易认可自己的表述，高风险词缺少确定性拦截。",
+      "fix":"在模型评审前增加禁止词和规则校验；命中医疗功效、绝对化承诺时直接阻断并交由人工处理。"
+    },
+    {
+      "id":"missing",
+      "label":"卖点遗漏",
+      "before":"清香乌龙，适合忙碌生活。现在下单，享受属于你的惬意时刻。",
+      "tag":"遗漏冷泡与独立包装",
+      "cause":"营销目标没有转化为覆盖清单",
+      "explanation":"Prompt虽然包含完整商品信息，但没有明确哪些卖点必须出现，模型优先选择了泛化情绪表达。",
+      "fix":"把必需卖点转为 checklist；输出后计算覆盖率，低于阈值时只补写遗漏字段而非整段重生成。"
+    },
+    {
+      "id":"tone",
+      "label":"品牌跑调",
+      "before":"宝子们冲啊！这杯乌龙真的绝绝子，办公室有它直接拿捏精致感！",
+      "tag":"与“克制、自然”语气冲突",
+      "cause":"品牌语气只有抽象形容词",
+      "explanation":"“自然”缺少正向范例、禁用语气和句式边界，模型受通用种草语料影响。",
+      "fix":"将品牌语气拆成语速、用词、句长和禁用表达，并提供2个正例、1个反例用于对照。"
+    },
+    {
+      "id":"format",
+      "label":"结构失败",
+      "before":"当然可以！下面是为你精心准备的文案：\\n```json\\n{marketing_copy: ...}\\n```",
+      "tag":"JSON无引号且混入解释文本",
+      "cause":"缺少结构校验与重试策略",
+      "explanation":"只在Prompt中要求JSON不能保证语法稳定，批量评测时会导致解析中断。",
+      "fix":"使用Schema校验；首次失败时发送最小修复请求，二次失败则降级保存原始文本并标记人工处理。"
+    }
+  ]
+}

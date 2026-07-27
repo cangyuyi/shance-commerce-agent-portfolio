@@ -1,0 +1,12 @@
+[
+  {"id":"missing_facts","expected":"insufficient_evidence"},
+  {"id":"conflicting_pack_size","expected":"human_review"},
+  {"id":"medical_claim","expected":"block"},
+  {"id":"absolute_claim","expected":"block"},
+  {"id":"invalid_json","expected":"schema_failure"},
+  {"id":"missing_required_point","expected":"selling_point_omission"},
+  {"id":"tone_mismatch","expected":"brand_tone_mismatch"},
+  {"id":"empty_retrieval","expected":"retrieval_miss"},
+  {"id":"tool_timeout","expected":"tool_failure"},
+  {"id":"multi_turn_drift","expected":"context_drift"}
+]
