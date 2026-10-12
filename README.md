@@ -1,5 +1,7 @@
 # 商策 Agent
 
+> **先看评测口径**：20 例 Benchmark 当前用于展示评测流程，结果为预置离线演示数据，**不是现场模型实测成绩**。可运行的是框架、校验与示例；接入真实模型后需保留逐例输出再重新评分。
+
 > 一个以评测驱动的电商营销内容 Agent 产品案例。  
 > An evaluation-driven e-commerce content Agent portfolio.
 
